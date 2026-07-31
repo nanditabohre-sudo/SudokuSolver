@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sudoku Solver</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sudoku Solver</h1>
+
+<form method="POST">
+
+<div class="board">
+
+{% for i in range(9) %}
+    {% for j in range(9) %}
+
+    <input 
+    name="cell{{i}}{{j}}"
+    value="{% if solved %}{{solved[i][j]}}{% endif %}"
+    maxlength="1">
+
+    {% endfor %}
+{% endfor %}
+
+</div>
+
+
+<button type="submit">
+Solve Sudoku
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
